@@ -1,0 +1,316 @@
+@font-face {
+    font-family: 'porter';
+    src: url('../assets/fonts/porter-sans-inline-block.ttf') format('truetype');
+}
+:root{
+    --primary-blue: #7AB7FF;
+    --primary-pink: #C187AF;
+    --primary-purple: #925483;
+    --secondary-purple: #9D5A8D;
+    --primary-salmon: #EF6356;
+    --primary-yellow: #FFEAC1;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Porter', sans-serif;
+}
+p, a{
+    font-family: 'Red Rose', serif;
+    
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: 300;
+    text-transform: capitalize;
+}
+h2{
+    font-size: 56px;
+}
+header{
+    background-color: var(--primary-blue);
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header a.logo{
+    color: black;
+    font-family: 'Porter', sans-serif;
+    font-size: 32px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+header nav ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+header nav ul li a{
+    color: black;
+    font-family: 'Porter', sans-serif;
+    font-size: 25px;
+    text-decoration: none;
+}
+nav ul li div{
+    background-color: black;
+    width: 0px;
+    height: 2px;
+    transition: .2s;
+}
+nav ul li:hover div{
+    width: 100%;
+    transition: .2s;
+}
+section.hero{
+    background-color: var(--primary-pink);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.hero p{
+    font-size: 25px;
+}
+section.hero div.container{
+    background-image: url('../assets/Images/Background.jpg');
+    width: 100%;
+    height: 550px;
+    position: relative;
+}
+section.hero div.container div{
+    position: absolute;
+    left: 100px;
+    bottom: 50px;
+}
+section.hero div.container div h2{
+    color: #FFEAC1;
+    margin-bottom: 12px;
+}
+section.hero div.container div p{
+    color: #FFEAC1;
+    max-width: 50%;
+}
+section#projects, section#models{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section#projects{
+    background-color: var(--primary-salmon);
+}
+section#models{
+    background-color: var(--secondary-purple);
+}
+section#projects h2, section#models h2{
+    padding:  50px;
+    color: var(--primary-yellow);
+}
+section#projects div.projects-grid img, section#models div.projects-grid img{
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+    
+}
+section#projects div.projects-grid, section#models div.projects-grid{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+section#projects div.projects-grid h3, section#models div.projects-grid h3{
+    color: var(--primary-yellow);
+    font-size: 20px;
+    text-transform: capitalize;
+}
+section.projects div.projects-grid p, section.models div.projects-grid p{
+    color: var(--primary-yellow);
+}
+footer{
+    background-color: var(--primary-blue);
+    padding: 40px;
+    display: flex;
+}
+footer div{
+    width: 50%;
+    padding: 20px;
+}
+footer div h3{
+    margin-bottom: 12px;
+    font-size: 26px;
+    text-transform: capitalize;
+}
+footer div p{
+    font-size: 16px;
+}
+footer div ul{
+    list-style: none;
+}
+footer div ul li a{
+    color: black;
+    text-decoration: none;
+}
+footer div.social ul{
+    display: flex;
+    gap: 20px;
+}
+footer div.social ul li a{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px black;
+    border-radius: 50%;
+    transition: .2s;
+}
+footer div.habilities li a::before, footer div.software li a::before{
+    content: "-   ";
+}
+footer div.social ul li a:hover{
+    background: black;
+    color: var(--primary-blue);
+    transition: .2s;
+}
+.carrusel{
+    background-color: #EF6356;
+    width: 100%;
+    max-width: 100%;
+    height: 950px;
+    position: relative;
+    overflow-y: hidden;
+}
+.carrusel article{
+    width: 100%;
+    height: 950px;
+}
+
+.buttons{
+    display: flex;
+    gap: 30px;
+    position: absolute;
+    left: 50%;
+    bottom: 70px;
+    transform: translateX(-50%);
+}
+.buttons button{
+    background-color: white;
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.buttons button.active{
+    width: 15px;
+    height: 15px;
+    bottom: 15px;
+    background-color: rgb(255, 206, 107);
+}
+.pop_up{
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(-100vh);
+    transition: 1s;
+    background-color: #00000080;
+}
+.pop_up.active{
+    transform: translateY(0);
+    transition: 1s;
+}
+.pop_up i{
+    color: white;
+    font-size: 60px;
+}
+.pop_up button{
+    position: absolute;
+    right: 0;
+    margin: 30px;
+    background: none;
+    border: none;
+}
+.pop_up article{
+    display: none;
+}
+
+
+
+
+.slide {
+    position: relative;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+    margin-top: 200px;
+}
+.slide-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 600px;
+}
+.slide-open:checked + .slide-item {
+    position: static;
+    opacity: 100;
+}
+.slide-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+.slide-item img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+.slide-control {
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 70px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+}
+.slide-control.prev {
+    left: 2%;
+}
+.slide-control.next {
+    right: 2%;
+}
+.slide-control:hover {
+    color: gray;
+}
+#slide-1:checked ~ .control-1,
+#slide-2:checked ~ .control-2,
+#slide-3:checked ~ .control-3 {
+    display: block;
+}
+
+#titulo {
+    width: 100%;
+    position: absolute;
+    padding: 0px;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 27px;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Open Sans', sans-serif;
+    z-index: 9999;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), 
+         -1px 0px 2px rgba(255, 255, 255, 0);
+}
